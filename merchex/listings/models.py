@@ -15,6 +15,9 @@ class Band(models.Model):
         HIP_HOP = 'HH'
         SYNTH_POP = 'SP'
         ALTERNATIVE_ROCK = 'AR'
+    genre = models.fields.CharField(choices=Genre.choices, max_length=5)
+    def __str__(self):
+        return f'{self.name}'
 
 class Listing(models.Model):
     title = models.fields.CharField(max_length=100)
@@ -28,3 +31,5 @@ class Listing(models.Model):
         MISCELLANEOUS = 'MI'
 
     type = models.fields.CharField(choices=Type.choices, max_length=5)
+    def __str__(self):
+        return f'{self.title}'
