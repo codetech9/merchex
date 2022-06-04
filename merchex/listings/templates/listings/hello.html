@@ -5,6 +5,8 @@
     <ul>
         {% for band in bands %}
         <li>{{ band.name }}</li>
+        <li>{{ band.genre }}</li>
+        <li>{{ band.year_formed }}</li>
         {% endfor %}
     </ul>
 {% endblock %}

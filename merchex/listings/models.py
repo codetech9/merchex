@@ -15,9 +15,16 @@ class Band(models.Model):
         HIP_HOP = 'HH'
         SYNTH_POP = 'SP'
         ALTERNATIVE_ROCK = 'AR'
-    """
-    genre = models.fields.CharField(choices=Genre.choises, max_length=5)
-    """
 
 class Listing(models.Model):
     title = models.fields.CharField(max_length=100)
+    description = models.fields.CharField(max_length=100)
+    sold = models.fields.BooleanField(default=True)
+    year = models.fields.IntegerField()
+    class Type(models.TextChoices):
+        RECORDS = 'RE'
+        CLOTHINGS = 'CL'
+        POSTERS = 'PO'
+        MISCELLANEOUS = 'MI'
+
+    type = models.fields.CharField(choices=Type.choices, max_length=5)
