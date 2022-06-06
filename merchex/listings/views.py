@@ -1,14 +1,22 @@
+from cgitb import html
+from urllib import request
 from django.shortcuts import HttpResponse
 from django.shortcuts import render
 from listings.models import Band
 from listings.models import Listing
 
 # Create your views here.
-def hello(request):
+def band_list(request):
     bands = Band.objects.all()
     return render(request,
-    'listings/hello.html',
+    'listings/band_list.html',
     {"bands": bands})
+
+def band_detail(request, id):
+    band = Band.objects.get(id=id)
+    return render(request,
+    'listings/band_detail.html',
+    {'band': band})
 
 
 def about(request):
