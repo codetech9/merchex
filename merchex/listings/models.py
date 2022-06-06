@@ -33,3 +33,4 @@ class Listing(models.Model):
     type = models.fields.CharField(choices=Type.choices, max_length=5)
     def __str__(self):
         return f'{self.title}'
+    band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
