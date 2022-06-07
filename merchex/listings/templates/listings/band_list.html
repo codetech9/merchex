@@ -1,9 +1,11 @@
 {% extends 'listings/base.html' %}
 {% block content %}
-<h1>Groupes</h1>
-    <ul>
+<h1 class="h1 text-center">Groupes</h1>
+  <div class="container">
+    <ul class="list-group">
         {% for band in bands %}
-        <li><a href="/bands/{{ band.id }}"> {{ band.name }}</a></li>
+        <li class="list-group-item"><a href="/bands/{{ band.id }}"> {{ band.name }}</a></li>
         {% endfor %}
     </ul>
+  </div>
 {% endblock %}
