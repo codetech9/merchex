@@ -9,3 +9,7 @@ body{
 li.list-group-item a{
   text-decoration: none;
 }
+
+.errorlist {
+  margin-bottom: -10px;
+}
